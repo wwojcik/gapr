@@ -56,8 +56,9 @@ jobs:
       - id: upload-files
         uses: google-github-actions/upload-cloud-storage@main
         with:
-          path: web/*
+          path: web
           destination: ${{secrets.SPA_BUCKET_NAME}}
+          parent: false
       - name: update deployment status
         uses: bobheadxi/deployments@v0.4.3
         if: always()
